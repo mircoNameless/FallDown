@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FanPlatform : MonoBehaviour
+public class FanPlatform : Platform
 {
     private Animator _animator;
-    
-    private void Start()
+
+    protected override void Start()
     {
+        base.Start();
         _animator = GetComponent<Animator>();
     }
 
@@ -17,6 +18,7 @@ public class FanPlatform : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _animator.Play("FanPlatform");
+            GameMgr.instance.player.PlayerJump();
         }
     }
 }

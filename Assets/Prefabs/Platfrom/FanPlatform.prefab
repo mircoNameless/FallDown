@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2193029647634167619}
   - component: {fileID: 2193029647634167618}
   - component: {fileID: 1280678825}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FanPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,5 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8e5fcba9dae004eaf48fc04d0ad36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topLine: {fileID: 0}
-  speed: 1
+  speed: 2

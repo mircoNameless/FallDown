@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 69575437306124818}
   - component: {fileID: 69575437306124817}
   - component: {fileID: 429277661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RotatePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -1.54}
+  m_ConnectedAnchor: {x: 0, y: -7.71}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -187,5 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8e5fcba9dae004eaf48fc04d0ad36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topLine: {fileID: 0}
-  speed: 1
+  speed: 2

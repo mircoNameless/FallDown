@@ -8,8 +8,8 @@ public class Platform : MonoBehaviour
     public float speed;
     private Vector3 movement;
     private float deadLine;
-    
-    private void Start()
+
+    protected virtual void Start()
     {
         movement.y = speed;
         deadLine = GameMgr.instance.topLine.position.y;

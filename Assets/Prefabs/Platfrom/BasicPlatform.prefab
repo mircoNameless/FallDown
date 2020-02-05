@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6704307665046715792}
   - component: {fileID: 150867780}
   - component: {fileID: 3402619176793790452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BasicPlatform
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -140,5 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8e5fcba9dae004eaf48fc04d0ad36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topLine: {fileID: 0}
-  speed: 1
+  speed: 2
