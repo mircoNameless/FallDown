@@ -8,6 +8,9 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Background.cs" t="Include" />
+          <e p="FanPlatform.cs" t="Include" />
+          <e p="GameMgr.cs" t="Include" />
+          <e p="Platform.cs" t="Include" />
         </e>
       </e>
       <e p="FallDown.sln" t="IncludeFlat" />
