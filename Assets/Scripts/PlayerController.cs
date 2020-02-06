@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
     private Animator animator;
-    private float speed = 2f;
+    public float speed = 2f;
 
     public float checkRadius;
     public LayerMask platform;
