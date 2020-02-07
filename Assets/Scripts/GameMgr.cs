@@ -59,18 +59,21 @@ public class GameMgr : MonoBehaviour
             }
             int index = Random.Range(0, platforms.Count);
 
-            if (index == 3)
-            {
-                lastSpike = true;
-            }
-
             if (lastSpike)
             {
                 while (index == 3)
                 {
                     index = Random.Range(0, platforms.Count);
                 }
+                lastSpike = false;
             }
+            
+            
+            if (index == 3)
+            {
+                lastSpike = true;
+            }
+
 
             Instantiate(platforms[index], position, Quaternion.identity, deadLine);
         }

@@ -430,6 +430,7 @@ MonoBehaviour:
   - {fileID: 2193029647634167622, guid: 178c250c371f3134bbc51aa3b2ca2fad, type: 3}
   - {fileID: 69575437306124844, guid: 1b04f0d5548220f4c9137aad0257d6ae, type: 3}
   - {fileID: 291484067835716113, guid: e6f7f74cd5f52d0488a816b22cefc343, type: 3}
+  - {fileID: 6704307665046715799, guid: db4635078d9360b489724504f5e54868, type: 3}
   score: {fileID: 1597548431}
   gameOver: {fileID: 1404131323}
 --- !u!1 &247688575
