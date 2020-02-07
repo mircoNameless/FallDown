@@ -53,11 +53,12 @@ public class PlayerController : MonoBehaviour
     public void PlayerDead()
     {
         playerDead = true;
+        GameMgr.instance.GameOver();
     }
 
     public void PlayerJump()
     {
-        rigidbody.velocity = new Vector2(rigidbody.velocity.x, 8f);
+        rigidbody.velocity = new Vector2(rigidbody.velocity.x, 7f);
     }
 
     private void OnDrawGizmosSelected()

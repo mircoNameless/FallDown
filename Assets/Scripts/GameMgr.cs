@@ -1,6 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class GameMgr : MonoBehaviour
 {
@@ -11,6 +15,9 @@ public class GameMgr : MonoBehaviour
     public Transform deadLine;
 
     public List<GameObject> platforms;
+
+    public Text score;
+    public GameObject gameOver;
 
     private bool lastSpike = false;
 
@@ -29,26 +36,66 @@ public class GameMgr : MonoBehaviour
         StartCoroutine(StartCreate());
     }
 
+    private float distacne = 0.7f;
     public void CreatePlatform()
     {
-        Vector3 position = deadLine.position;
-        position.x = Random.Range(-2f, 2f);
-        int index = Random.Range(0, platforms.Count);
-
-        if (index == 3)
+        int times = Random.Range(1, 3);
+        float posX = 0;
+        for (int i = 0; i < times; i++)
         {
-            lastSpike = true;
-        }
-
-        if (lastSpike)
-        {
-            while (index == 4)
+            Vector3 position = deadLine.position;
+            if (Mathf.Approximately(posX, 0))
             {
-                index = Random.Range(0, platforms.Count);
+                position.x = Random.Range(-2f, 2f);
+                posX = position.x;
             }
+            else
+            {
+                while (position.x < posX + distacne && position.x > posX - distacne)
+                {
+                    position.x = Random.Range(-2f, 2f);
+                }
+                posX = position.x;
+            }
+            int index = Random.Range(0, platforms.Count);
+
+            if (index == 3)
+            {
+                lastSpike = true;
+            }
+
+            if (lastSpike)
+            {
+                while (index == 3)
+                {
+                    index = Random.Range(0, platforms.Count);
+                }
+            }
+
+            Instantiate(platforms[index], position, Quaternion.identity, deadLine);
         }
+    }
 
-        Instantiate(platforms[index], position, Quaternion.identity, deadLine);
+    public void RestartGame()
+    {
+        gameOver.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
+    }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        gameOver.SetActive(true);
+    }
+
+    private void Update()
+    {
+        score.text = Time.timeSinceLevelLoad.ToString("00");
     }
 }
